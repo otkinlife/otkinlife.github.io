@@ -11,7 +11,7 @@ keywords: KcJia, 羽中, jkc
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
-repository: mzlogin/mzlogin.github.io
+repository: otkinlife/otkinlife.github.io
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
@@ -36,9 +36,9 @@ components:
         enabled: true
     # 页面右上角，以及「关于」页面的二维码
     # 修改图片请替换 assets/images/qrcode.jpg
-    qrcode:
-        enabled: true
-        image_alt: 羽中
+    #qrcode:
+    #    enabled: true
+    #    image_alt: 羽中
 # 压缩页面内容
 compress_html:
   clippings: all
