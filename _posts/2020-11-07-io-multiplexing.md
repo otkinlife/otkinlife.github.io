@@ -3,6 +3,7 @@ layout: post
 title: I/O多路复用：EPOLL
 date: 2020-11-07
 tags: ["I/O多路复用","Linux"]
+categories: 技术
 ---
 
 <!-- wp:heading {"level":4} -->
@@ -60,7 +61,7 @@ epoll_create
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":346,"sizeSlug":"large","linkDestination":"none"} -->
-<img src="/images/blog/image-4.png" width="80%" alt="epoll_ctl" />
+<img src="{{site.url}}/images/blog/image-4.png" width="80%" alt="epoll_ctl" />
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
