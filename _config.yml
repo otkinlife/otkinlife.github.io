@@ -141,7 +141,7 @@ gitalk:
     owner: otkinlife
     repo: blog-comments
     clientID: 72613be8a4574d3c2ffb
-    clientSecret: 328cf6aeae1dee478afb310f5cd02bd1ad41dff6s
+    clientSecret: cb0c78fe59990eb8653131fc12528e21e9e09ad1
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
