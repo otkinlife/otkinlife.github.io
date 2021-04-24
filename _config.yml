@@ -138,7 +138,7 @@ disqus:
 #        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: KcJia
+    owner: otkinlife
     repo: blog-comments
     clientID: 72613be8a4574d3c2ffb
     clientSecret: 328cf6aeae1dee478afb310f5cd02bd1ad41dff6s
