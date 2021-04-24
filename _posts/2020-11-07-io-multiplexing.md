@@ -60,7 +60,7 @@ epoll_create
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":346,"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large">![](image-4.png)<figcaption>eventpoll</figcaption></figure>
+![](../images/blog/image-4.png)
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
