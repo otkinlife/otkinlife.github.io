@@ -60,7 +60,7 @@ epoll_create
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":346,"sizeSlug":"large","linkDestination":"none"} -->
-![](../images/blog/image-4.png)
+![](images/blog/image-4.png)
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
