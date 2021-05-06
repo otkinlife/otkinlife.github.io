@@ -137,11 +137,11 @@ collections:
 #        client_id: d2e1cbbd298958076462
 #        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # https://github.com/gitalk/gitalk#install
-#gitalk:
-#    owner: otkinlife
-#    repo: blog-comments
-#    clientID: 72613be8a4574d3c2ffb
-#    clientSecret: cb0c78fe59990eb8653131fc12528e21e9e09ad1
+gitalk:
+    owner: otkinlife
+    repo: blog-comments
+    clientID: 72613be8a4574d3c2ffb
+    clientSecret: cb0c78fe59990eb8653131fc12528e21e9e09ad1
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
