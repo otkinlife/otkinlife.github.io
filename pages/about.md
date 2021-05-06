@@ -12,7 +12,7 @@ permalink: /about/
 
 生命不息，折腾不止
 
-## 联系
+## 社交地址
 
 <ul>
 {% for website in site.data.social %}
@@ -27,7 +27,7 @@ permalink: /about/
 </ul>
 
 
-## Skill Keywords
+## 技能关键字
 
 {% for skill in site.data.skills %}
 ### {{ skill.name }}
