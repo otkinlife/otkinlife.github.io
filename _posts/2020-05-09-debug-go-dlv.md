@@ -116,7 +116,9 @@ b name2 main.go:10         #在main.go的第10行设置断点，断点名称为n
 
 配置Goland
 
+
+
+
 ![]({{site.url}}/images/blog/WeChatfc83ee0205955cf29469f388c5842e9e.png)
-![]({{site.url}}/images/blog/WeChat201fc1a59dc150835e79cdcbb05dd788.png) 
 
 最后就可以直接在Goland里debug代码了
