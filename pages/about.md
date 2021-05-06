@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: 关于
 description: 生命不息，折腾不止
 keywords: KcJia, 羽中
 comments: true
