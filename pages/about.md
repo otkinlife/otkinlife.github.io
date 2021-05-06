@@ -1,18 +1,16 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: 生命不息，折腾不止
+keywords: KcJia, 羽中
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+生命的意义在于折腾
 
-仰慕「优雅编码的艺术」。
-
-坚信熟能生巧，努力改变人生。
+生命不息，折腾不止
 
 ## 联系
 
