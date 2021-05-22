@@ -39,6 +39,7 @@ categories:
         ```shell
         yum -y install gcc gcc-c++ kernel-devel
         ```
+
 ### 开始调试
 1. 环境准备好之后就可以开始实践了，首先我们打开VsCode配置远程连接
    - 选择左侧边栏远程设备按钮 》 选择SSH Targets 》 点击+ 》 输入远程连接的ssh命令
