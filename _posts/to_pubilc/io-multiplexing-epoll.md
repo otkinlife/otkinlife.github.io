@@ -5,7 +5,7 @@ tags:
     - 基础知识
 categories:
     - 技术
-    - I/O 多路复用
+    - 网络
 ---
 
 ## Epoll的实现原理（一）学会使用epoll
