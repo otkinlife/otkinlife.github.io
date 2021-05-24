@@ -17,16 +17,21 @@ categories:
 > - 下面提到的所有方法的介绍（包括入参和返回值）都可以使用`man`命令查看，这里不多赘述。  
 
 #### 1. socket()
+
 ```shell
 int socket(int domain, int type, int protocol);
 ```
 - 该方法主要定义协议相关的信息，并返回一个socketfd, 此时该fd只含有protocol的信息。
+  
 #### 2. bind()
+
 ```shell
 int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 ```
 - 该方法将server_ip, server_port两部分信息写入socketfd
+  
 #### 3. listen()
+
 ```shell
 int listen(int sockfd, int backlog);
 ```
@@ -35,6 +40,7 @@ int listen(int sockfd, int backlog);
 - 客户端通过connect()方法发起链接时，内核会先将该链接信息放到未完成链接队列之中，等链接完成三次握手之后再移到已完成链接队列的尾部
 
 #### 4. accept()
+
 ```shell
 int accept4(int sockfd, struct sockaddr *addr, socklen_t *addrlen, int flags);
 ```
@@ -42,6 +48,7 @@ int accept4(int sockfd, struct sockaddr *addr, socklen_t *addrlen, int flags);
 - 如果已完成链接队列为空则会阻塞，直到拿到一个链接fd
 
 #### 5. connect()
+
 ```shell
 int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 ```
@@ -49,11 +56,12 @@ int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 
 ### Socket的系统链路流程图
 
-<img src="../../images/blog/socket-simple-1.jpg" width="500px">
+<img src="{{site.url}}/images/blog/socket-simple-1.jpg" width="500px">
 
 ### 实现代码
 
 #### 客户端代码
+
 ```c
 #include <stdio.h>
 #include <string.h>
