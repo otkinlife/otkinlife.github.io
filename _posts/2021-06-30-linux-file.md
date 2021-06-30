@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux：打开文件
-date: 2020-08-03
+date: 2021-06-30
 tags: ["Linux","Os"]
 categories: Linux
 
