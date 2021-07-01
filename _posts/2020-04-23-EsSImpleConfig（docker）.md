@@ -5,7 +5,7 @@ tags:
     - Es
     - Docker
 categories:
-    - 技术
+    - 工具
 ---
 
 1. 配置中文分词需要安装中文分词插件

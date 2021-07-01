@@ -3,9 +3,7 @@ title: Socket简单实现客户端与服务端交互
 date: 2021/5/24 18:17:00
 tags: 
     - 基础知识
-categories:
-    - 技术
-    - 网络
+categories: 网络
 ---
 
 ## Socket简单实现客户端与服务端交互
