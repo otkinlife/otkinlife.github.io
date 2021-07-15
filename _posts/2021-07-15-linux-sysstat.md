@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Linux：Linux 性能查看工具
+title: Linux：性能查看工具
 date: 2021-07-15
 tags: ["Linux","Os"]
 categories: 操作系统
 ---
+
 ### Linux 性能查看工具
 
 #### 什么是平均负载（load average）
