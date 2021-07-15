@@ -5,6 +5,7 @@ date: 2021-06-30
 tags: ["Linux","Os"]
 categories: 操作系统
 ---
+
 ## Linux打开文件
 ### 引子
 #### linux的磁盘是如何存储文件的
