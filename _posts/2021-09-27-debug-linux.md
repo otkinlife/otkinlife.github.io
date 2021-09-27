@@ -16,8 +16,8 @@ categories:
 > 
 > 镜像的地址是：
 > 
->  1. arm_64：https://hub.docker.com/repository/docker/appledate/linux-arm-qemu
->  2. x86_64：https://hub.docker.com/repository/docker/appledate/linux-x86_64-qemu 
+>  1. arm_64：[https://hub.docker.com/repository/docker/appledate/linux-arm-qemu](https://hub.docker.com/repository/docker/appledate/linux-arm-qemu)
+>  2. x86_64：[https://hub.docker.com/repository/docker/appledate/linux-x86_64-qemu](https://hub.docker.com/repository/docker/appledate/linux-arm-qemu) 
 
 ### Debug 内核的基本逻辑
 首先我们 要搞清的几件事：
