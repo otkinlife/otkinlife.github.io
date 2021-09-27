@@ -290,3 +290,5 @@ cd /developer
 <img src = "{{site.url}}/images/blog/2021-09-27-debug-linux/9.png" width = "80%">
 
 到此我们就可以调试自定义的程序了
+
+参考文档：https://wenfh2020.com/2021/05/19/gdb-kernel-networking
