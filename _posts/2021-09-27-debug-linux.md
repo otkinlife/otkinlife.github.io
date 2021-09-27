@@ -291,4 +291,4 @@ cd /developer
 
 到此我们就可以调试自定义的程序了
 
-参考文档：https://wenfh2020.com/2021/05/19/gdb-kernel-networking
+参考文档：[https://wenfh2020.com/2021/05/19/gdb-kernel-networking](https://wenfh2020.com/2021/05/19/gdb-kernel-networking)
