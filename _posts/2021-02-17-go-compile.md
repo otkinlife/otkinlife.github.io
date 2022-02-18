@@ -12,8 +12,8 @@ categories:
 
 ### 引子
 想要了解编译优化的原理首先要先明白Go到底是怎么编译的。
-> *Tips :*</br>
-> 1. Go的编译器是由Go语言实现，存放在SDK的src/cmd/compile目录下</br>
+> *Tips :*
+> 1. Go的编译器是由Go语言实现，存放在SDK的src/cmd/compile目录下
 > 2. 通过go tool compile -help 命令查看编译参数的帮助说明
 
 #### Go编译过程
@@ -64,9 +64,9 @@ func main() {
 3. 优化过程主要基于AST完成了逃逸分析和内联优化，最终输出的依然是AST。
 4. 最后SSA编译器将AST转化成静态单赋值语句，然后完成死码消除，并最终转换为汇编码。
 
-> *Tips :*</br>
-> 1. SSA（Static Single Assignment）静态单赋值语句顾名思义，每个变量只能被定义一次，可被多次使用。</br>
-> 2. SSA编译器完成了树结构转线形结构，为后期生成汇编码打基础。</br>
+> *Tips :*
+> 1. SSA（Static Single Assignment）静态单赋值语句顾名思义，每个变量只能被定义一次，可被多次使用。
+> 2. SSA编译器完成了树结构转线形结构，为后期生成汇编码打基础。
 > 3. SSA编译过程示例（通过GOSSAFUNC指定生成）[传送门]({{site.url}}/html/ssa.html)
 
 #### Go的编译优化手段
@@ -194,10 +194,11 @@ go build -gcflags='-l -S' main.go 2>&1 |grep -A20 '"".main STEXT'
 可以看到16行的内联已经变成了函数调用，因为我们禁用了内联优化。
 
 #### Q&A
-Q：为什么Debug Go的二进制文件时总是有变量看不到?</br>
+Q：为什么Debug Go的二进制文件时总是有变量看不到?
+
 A：因为编译过程中这些变量被优化掉了
 
-Q：怎么不让编译器优化这些变量呢？</br>
+Q：怎么不让编译器优化这些变量呢？
 A：编译的时候新增参数gcflags='-l -N'，-l禁用内联，-N禁用优化
 
 ### 参考文档
