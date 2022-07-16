@@ -51,17 +51,17 @@ struct fox {
     unsigned long weight; /* 重最，以千克为单位*/
     bool is_fantastic; /*这只狐狸奇妙吗？*/
     struct list_head list; /*所有 fox 结构体形成链表*/
-}；
+};
 ```
 
 上述结构中，fox中的list.next指向下一个元素，list.prev指向前一个元素。现在链表已经能用了，但是显然还不够方便。因此內核又提供了一组链表方法。
 
 ### 操作方法（复杂度O(1)）
+
 |方法|说明|
 |:--|:--|
-|list\_add(struct list\_head *new, struct list\_head *head)|加入一个新节点到链
-表中。|
-|list\_add\_tail(struct list\_head *new, struct list\_head *head)|把节点增加到链表尾|
+|list\_add(struct list\_head *new, struct list\_head *head)|加入一个新节点到链表中。|
+|list\_add\_tail(struct list\_head *new, struct list\_head *head)|把节点增加到链表尾。|
 |list_del(struct list\_head *entry)|从链表中删除一个节点。|
 |list\_del\_init(struct list\_head *entry)|从链表中删除一个节点并对其重新初始化。|
 |list\_move(struct list\_head *list, struct list\_head *head)|从一个链表中移除list节点并把该节点加到head节点后面。|
@@ -69,7 +69,9 @@ struct fox {
 |list\_empty(struct list\_head *head)|检查链表是否为空。|
 |list\_splice(struct list\_head *list, struct list\_head *head)|将两个未链接的链表链接起来。|
 |list\_splice\_init(struct list\_head *list, struct list\_head *head)|将两个未链接的链表链接起来，并初始化了list链表。|
+
 ### 查找方法（复杂度O(n)）
+
 |方法|说明|
 |:--|:--|
 |list\_entry(struct list\_head *entry)|获取包含entry节点的外层结构体指针。该方法复杂度O(1)。|
@@ -113,6 +115,7 @@ struct fox {
 ```
 
 链表需要在使用前初始化。因为多数元素都是动态创建的（也许这就是需要链表的原因），因此最常见的方式是在运行时初始化链表。
+
 
 ```c
 /*定义并初始化一个名为fox_list的链表*/
