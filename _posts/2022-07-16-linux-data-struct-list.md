@@ -88,7 +88,7 @@ struct fox {
 /* container_of 的实现 */
 #define container_of (ptr, type, membez) ({ \
     const typeof (((type *)0)->member) *__mptr = (ptr); \
-    (type *) ( (char *)__mptr - offsetof(type, member) ) ;
+    (type *) ( (char *)__mptr - offsetof(type, member)); \
 })
 ```
 
@@ -105,7 +105,6 @@ struct fox {
 ## 实践
 
 ```c
-/*
 struct fox {
     unsigned long tail_length; /*尾巴长度，以厘米为单位*/
     unsigned long weight; /*重量，以千克为单位*/
