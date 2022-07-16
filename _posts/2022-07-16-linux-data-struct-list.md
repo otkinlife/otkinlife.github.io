@@ -58,25 +58,28 @@ struct fox {
 
 ### 操作方法（复杂度O(1)）
 
-
-- `list\_add(struct list\_head *new, struct list\_head *head)` 加入一个新节点到链表中。
-- `list\_add\_tail(struct list\_head *new, struct list\_head *head)` 把节点增加到链表尾。
-- `list_del(struct list\_head *entry)` 从链表中删除一个节点。
-- `list\_del\_init(struct list\_head *entry)` 从链表中删除一个节点并对其重新初始化。
-- `list\_move(struct list\_head *list, struct list\_head *head)` 从一个链表中移除list节点并把该节点加到head节点后面。
-- `list\_move\_tail(struct list\_head *list, struct list\_head *head))` 从一个链表中移除list节点并把该节点加到head的节点前（也就是链表尾部）。
-- `list\_empty(struct list\_head *head)` 检查链表是否为空。
-- `list\_splice(struct list\_head *list, struct list\_head *head)` 将两个未链接的链表链接起来。
-- `list\_splice\_init(struct list\_head *list, struct list\_head *head)` 将两个未链接的链表链接起来，并初始化了list链表。
+|方法|说明|
+|:--|:--|
+|list\_add(struct list\_head *new, struct list\_head *head)|加入一个新节点到链表中。|
+|list\_add\_tail(struct list\_head *new, struct list\_head *head)|把节点增加到链表尾。|
+|list_del(struct list\_head *entry)|从链表中删除一个节点。|
+|list\_del\_init(struct list\_head *entry)|从链表中删除一个节点并对其重新初始化。|
+|list\_move(struct list\_head *list, struct list\_head *head)|从一个链表中移除list节点并把该节点加到head节点后面。|
+|list\_move\_tail(struct list\_head *list, struct list\_head *head))|从一个链表中移除list节点并把该节点加到head的节点前（也就是链表尾部）。|
+|list\_empty(struct list\_head *head)|检查链表是否为空。|
+|list\_splice(struct list\_head *list, struct list\_head *head)|将两个未链接的链表链接起来。|
+|list\_splice\_init(struct list\_head *list, struct list\_head *head)|将两个未链接的链表链接起来，并初始化了list链表。|
 
 ### 查找方法（复杂度O(n)）
 
-- `list\_entry(struct list\_head *entry)`获取包含entry节点的外层结构体指针。该方法复杂度O(1)。
-- `list\_for\_search(struct list\_head *entry, struct list\_head *head)` 在head链表中查找entry节点。
-- `list\_for\_each\_entry(struct data *data, struct list\_head *head, struct list\_head *list)`在head链表李查找list节点并将外层结构地址赋值给data。
-- `list\_for\_each\_entry\_reverse(struct data *data, struct list_head *head, struct list\_head *list)`与list\_for\_each\_entry()方法类似，查找顺序为倒序。
-- `list\_for\_each\_entry\_safe(struct data *data, struct list\_head *next, struct list\_head *head, struct list\_head *list)`查找并删除。
-- `list\_for\_each\_entry\_safe\_reverse(struct data *data, struct list\_head *next, struct list\_head *head, struct list\_head *list)`与list\_for\_each\_entry\_safe()方法类似，查找顺序为倒序。
+|方法|说明|
+|:--|:--|
+|list\_entry(struct list\_head *entry)|获取包含entry节点的外层结构体指针。该方法复杂度O(1)。|
+|list\_for\_search(struct list\_head *entry, struct list\_head *head)|在head链表中查找entry节点。|
+|list\_for\_each\_entry(struct data *data, struct list\_head *head, struct list\_head *list)|在head链表李查找list节点并将外层结构地址赋值给data。|
+|list\_for\_each\_entry\_reverse(struct data *data, struct list_head *head, struct list\_head *list)|与list\_for\_each\_entry()方法类似，查找顺序为倒序。|
+|list\_for\_each\_entry\_safe(struct data *data, struct list\_head *next, struct list\_head *head, struct list\_head *list)|查找并删除。|
+|list\_for\_each\_entry\_safe\_reverse(struct data *data, struct list\_head *next, struct list\_head *head, struct list\_head *list)|与list\_for\_each\_entry\_safe()方法类似，查找顺序为倒序。|
 
 事实上我们通过list\_head结构发现它的指针指向的类型也都是list_head。那么内核提供的方法是如何定位到我们需要的外层数据结构呢？
 答案是使用宏container_of(), 我们可以很方便地从链表指针找到父结构中包合的任何变量。这是因为在C语言中，一个给定结构中的变量偏移在编译时地址就被ABI固定下来了。
