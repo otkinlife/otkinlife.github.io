@@ -58,17 +58,17 @@ struct fox {
 
 ### 操作方法（复杂度O(1)）
 
-|方法&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|说明|
-|:--|:--|
-|list\_add(struct list\_head *new, struct list\_head *head)|加入一个新节点到链表中。|
-|list\_add\_tail(struct list\_head *new, struct list\_head *head)|把节点增加到链表尾。|
-|list_del(struct list\_head *entry)|从链表中删除一个节点。|
-|list\_del\_init(struct list\_head *entry)|从链表中删除一个节点并对其重新初始化。|
-|list\_move(struct list\_head *list, struct list\_head *head)|从一个链表中移除list节点并把该节点加到head节点后面。|
-|list\_move\_tail(struct list\_head *list, struct list\_head *head))|从一个链表中移除list节点并把该节点加到head的节点前（也就是链表尾部）。|
-|list\_empty(struct list\_head *head)|检查链表是否为空。|
-|list\_splice(struct list\_head *list, struct list\_head *head)|将两个未链接的链表链接起来。|
-|list\_splice\_init(struct list\_head *list, struct list\_head *head)|将两个未链接的链表链接起来，并初始化了list链表。|
+|方法                                                                 |说明                                                        |
+|:-------------------------------------------------------------------|:-----------------------------------------------------------|
+|list\_add(struct list\_head *new, struct list\_head *head).         |加入一个新节点到链表中。                                        |
+|list\_add\_tail(struct list\_head *new, struct list\_head *head).   |把节点增加到链表尾。                                           |
+|list_del(struct list\_head *entry)                                  |从链表中删除一个节点。                                         |
+|list\_del\_init(struct list\_head *entry)                           |从链表中删除一个节点并对其重新初始化。                            |
+|list\_move(struct list\_head *list, struct list\_head *head)        |从一个链表中移除list节点并把该节点加到head节点后面。               |
+|list\_move\_tail(struct list\_head *list, struct list\_head *head)) |从一个链表中移除list节点并把该节点加到head的节点前（也就是链表尾部）。|
+|list\_empty(struct list\_head *head)                                |检查链表是否为空。                                             |
+|list\_splice(struct list\_head *list, struct list\_head *head)      |将两个未链接的链表链接起来。                                     |
+|list\_splice\_init(struct list\_head *list, struct list\_head *head)|将两个未链接的链表链接起来，并初始化了list链表。                    |
 
 ### 查找方法（复杂度O(n)）
 
