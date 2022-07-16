@@ -8,7 +8,7 @@ categories: 操作系统
 
 
 ## 通用链表结构
-我们通常通过在内部添加一个指向数据的next（或者 previous）节点指针，才能串联在链表中。比如，假定我们有一个 fox数据结构来描述犬科动物中的一员。
+我们通常实现链表的方式是通过在数据结构体内部添加一个指向数据的next（或者 previous）指针，使各个数据节点串联在链表中。假定我们有一个fox数据结构来描述狐狸，结构体如下：
 
 ```c
 struct fox {
@@ -18,7 +18,7 @@ struct fox {
 };
 ```
 
-存储这个结构到链表里的通常方法是在数据结构中嵌人一个链表指针，比如：
+通用实现链表的方式如下：
 
 ```c
 struct fox {
@@ -32,7 +32,7 @@ struct fox {
 
 ## Linux链表实现
 
-Linux内核方式与众不同，它不是将数据结构塞人链表，而是将链表节点塞人数据结构！
+Linux内核方式与众不同，它不是将数据结构塞入链表，而是将链表节点塞入数据结构！
 在2.1内核开发系列中，首次引人了官方内核链表实现。从此内核中的所有链表现在都使用官方的链表实现了，千万不要再自己造轮子啦！
 链表代码在头文件 ＜linux/list.h>中声明，其数据结构很简单：
 
@@ -43,7 +43,7 @@ struct list_head {
 }
 ```
 
-那么如何正确使用这个结构使一个普通的struct变成链表呢？
+那么如何正确使用这个结构使一个普通的struct变成链表呢？答案很简单：
 
 ```c
 struct fox {
@@ -54,7 +54,7 @@ struct fox {
 };
 ```
 
-上述结构中，fox中的list.next指向下一个元素，list.prev指向前一个元素。现在链表已经能用了，但是显然还不够方便。因此內核又提供了一组链表方法。
+fox中的list.next指向下一个元素，list.prev指向前一个元素。现在链表已经定义好了，但是显然还不够方便。因此內核又提供了一组方法来操作链表。
 
 ### 操作方法（复杂度O(1)）
 
@@ -81,7 +81,7 @@ struct fox {
 |list\_for\_each\_entry\_safe(struct data *data, struct list\_head *next, struct list\_head *head, struct list\_head *list)|查找并删除。|
 |list\_for\_each\_entry\_safe\_reverse(struct data *data, struct list\_head *next, struct list\_head *head, struct list\_head *list)|与list\_for\_each\_entry\_safe()方法类似，查找顺序为倒序。|
 
-事实上我们通过list\_head结构发现它的指针指向的类型也都是list_head。那么内核提供的方法是如何定位到我们需要的外层数据结构呢？
+事实上我们通过list\_head结构发现它的指针指向的类型也都是list\_head。那么内核提供的方法是如何定位到我们需要的外层数据结构呢？
 答案是使用宏container_of(), 我们可以很方便地从链表指针找到父结构中包合的任何变量。这是因为在C语言中，一个给定结构中的变量偏移在编译时地址就被ABI固定下来了。
 
 ```c
