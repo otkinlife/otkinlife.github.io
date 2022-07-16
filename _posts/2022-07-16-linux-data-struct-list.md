@@ -8,7 +8,7 @@ categories: 操作系统
 
 
 ## 通用链表结构
-通过在内部添加一个指向数据的next（或者 previous）节点指针，才能串联在链表中。比如，假定我们有一个 fox数据结构来描述犬科动物中的一员。
+我们通常通过在内部添加一个指向数据的next（或者 previous）节点指针，才能串联在链表中。比如，假定我们有一个 fox数据结构来描述犬科动物中的一员。
 
 ```c
 struct fox {
@@ -68,7 +68,7 @@ struct fox {
 |list\_move\_tail(struct list\_head *list, struct list\_head *head)) |从一个链表中移除list节点并把该节点加到head的节点前（也就是链表尾部）。|
 |list\_empty(struct list\_head *head)                                |检查链表是否为空。                                             |
 |list\_splice(struct list\_head *list, struct list\_head *head)      |将两个未链接的链表链接起来。                                     |
-|list\_splice\_init(struct list\_head *list, struct list\_head *head)|将两个未链接的链表链接起来，并初始化了list链表。                    |
+|list\_splice\_init(struct list\_head *list, struct list\_head *head)|将两个未链接的链表链接起来，并初始化了list链表。                   |
 
 ### 查找方法（复杂度O(n)）
 
