@@ -58,7 +58,7 @@ struct fox {
 
 ### 操作方法（复杂度O(1)）
 
-|方法|说明|
+|方法<div style="width:600px">|说明|
 |:--|:--|
 |list\_add(struct list\_head *new, struct list\_head *head)|加入一个新节点到链表中。|
 |list\_add\_tail(struct list\_head *new, struct list\_head *head)|把节点增加到链表尾。|
