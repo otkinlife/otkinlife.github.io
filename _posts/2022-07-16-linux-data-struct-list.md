@@ -84,7 +84,7 @@ struct fox {
 事实上我们通过list\_head结构发现它的指针指向的类型也都是list_head。那么内核提供的方法是如何定位到我们需要的外层数据结构呢？
 答案是使用宏container_of(), 我们可以很方便地从链表指针找到父结构中包合的任何变量。这是因为在C语言中，一个给定结构中的变量偏移在编译时地址就被ABI固定下来了。
 
-```C
+```c
 /* container_of 的实现 */
 #define container_of (ptr, type, membez) ({ \
     const typeof (((type *)0)->member) *__mptr = (ptr); \
@@ -94,7 +94,7 @@ struct fox {
 
 使用container_of()宏，我们看一个简单的内核函数如何返回包含list_head的父类型结构体：
 
-```C
+```c
 #define list_entry (ptr, type, member) \
     container_of (ptr, type, member)
 ```
