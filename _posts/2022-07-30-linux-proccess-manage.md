@@ -6,19 +6,25 @@ tags: ["Linux","Os"]
 categories: 操作系统
 ---
 
+
 ## 进程
 进程是处于执行期的程序以及执行期间所涉及的资源数据（比如进程的打开文件、信号量等）。
+
 ### task_struct
+
 linux为每一个进程维护了一个task_struct结构，该结构包含了进程运行时的状态以及涉及的资源。可以说通过task_struct这个结构可以更直观的了解一个进程。下图是task_struct的结构示意图：
+
 <img src = "{{site.url}}/images/blog/2022-07-30-linux-process-manage/1.jpg" width = "60%">
 
 ### task_list
+
 而包含task_struct的第一个地方是task_list，task_list以双向循环链表的形式保存在内核中。task_list用于CPU的调度，当CPU唤醒进程时就是通过该结构找到对应进程。结构如下：
 
 <img src = "{{site.url}}/images/blog/2022-07-30-linux-process-manage/2.jpg" width = "60%">
 
 ### thread_info
-task_struct由内核内存分配机制（slab分配器）分配，stab会在进程内核栈的栈顶或者栈底创建一个thread_info结构体，这个结构体就包含task_struct。这也是第二个包含task_struct的地方。该结构体的作用主要是为了便于内核快速定位到进程涉及的资源信息。（当然有的硬件体系结构可以拿出一个专门的寄存器来存放当前进程的task_struct指针，这样就不需要在内核栈中创建thread_info了），下图是thread_info在内核栈中的示意图：
+
+task_struct由内核内存分配机制（slab分配器）分配，slab会在进程内核栈的栈顶或者栈底创建一个thread_info结构体，这个结构体就包含task_struct。这也是第二个包含task_struct的地方。该结构体的作用主要是为了便于内核快速定位到进程涉及的资源信息。（当然有的硬件体系结构可以拿出一个专门的寄存器来存放当前进程的task_struct指针，这样就不需要在内核栈中创建thread_info了），下图是thread_info在内核栈中的示意图：
 
 <img src = "{{site.url}}/images/blog/2022-07-30-linux-process-manage/3.jpg" width = "60%">
 
@@ -27,6 +33,7 @@ task_struct由内核内存分配机制（slab分配器）分配，stab会在进�
 ## 进程状态
 
 ### 状态说明
+
 |状态|说明|
 |---|---|
 |TASK RUNNING（运行）|进程是可执行的：它或者正在执行，或者在运行队列中等待执行。这是进程在用户空间中执行的唯一可能的状态这种状态也可以应用到内核空间中正在执行的进程。|
@@ -51,6 +58,7 @@ task_struct由内核内存分配机制（slab分配器）分配，stab会在进�
 linux为了避免不必要的浪费在实现fork()时采用了“写时拷贝”，也就是说如果资源在子进程中只读的时候是不会copy的，还是读取共享跟父进程同样的数据。只要子进程需要修改资源内容时才会进行数据拷贝。
 
 ### 进程结束
+
 进程调用exit()来结束自己的生命。exit()方法做了几个事情：
 1. 将task_struct中的flag设置为PE_EXITING。
 2. 释放内存，关闭占用资源
@@ -58,6 +66,7 @@ linux为了避免不必要的浪费在实现fork()时采用了“写时拷贝”
 4. 养父进程得到通知后检索该进程的数据并释放最后的task_struct
 
 ## 进程与线程
+
 线程是CPU调度的单位，那么linux中的线程是怎么实现的呢？
 linux会在线程创建时为每个线程创建一个task_struct结构体，并在创建task_struct时指定共享的资源。那么这些共享相同资源的线程就是一个线程组，这个线程组在用户态的视角就是进程了。
 所以在内核中是没有进程和线程的区分的，所谓的进程其实是线程组，CPU在调度的时候只会切换线程, 如果切换线程时恰好是切换了线程组，此时在用户态来看就切换了进程。
