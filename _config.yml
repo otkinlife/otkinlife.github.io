@@ -1,7 +1,8 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl:
+remote_theme: samarsault/texture
+baseurl: https://kcjia.cn
 url: https://kcjia.cn
 date_format: "ordinal"
 title: KcJia的手札
