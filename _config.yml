@@ -1,16 +1,15 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-remote_theme: samarsault/texture
 baseurl: https://kcjia.cn
 url: https://kcjia.cn
-date_format: "ordinal"
+date_format: ordinal
 title: KcJia的手札
-subtitle: "生命不息，折腾不止。"
-description: "生命的意义在于折腾，生命不息，折腾不止。"
+subtitle: 生命不息，折腾不止。
+description: 生命的意义在于折腾，生命不息，折腾不止。
 keywords: KcJia, 羽中, jkc
 timezone: Asia/Shanghai
-encoding: "utf-8"
+encoding: UTF-8
 side_bar_repo_limit: 5
 repository: otkinlife/otkinlife.github.io
 # 对 css 和 js 资源的 cdn 加速配置
