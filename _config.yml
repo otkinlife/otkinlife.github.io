@@ -2,8 +2,8 @@
 #   Main Configs   #
 # ---------------- #
 remote_theme: samarsault/texture
-baseurl: https://kcjia.cn
-url: https://kcjia.cn
+baseurl: https://blog.kcjia.cn
+url: https://blog.kcjia.cn
 date_format: "ordinal"
 title: KcJia的手札
 subtitle: "生命不息，折腾不止。"
